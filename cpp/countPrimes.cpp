@@ -10,9 +10,6 @@ int countPrimes(int n){
 		return 0;
 	int *pnum = new int[n];
 	int mid = floor(sqrt(n));
-	// for(int i = 2;i < n + 1;i++){
-	// 	cout << pnum[i] << endl;	
-	// }
 	for(int i = 2;i <= mid;i++){
 		if(pnum[i] != 0)
 			continue;
@@ -30,7 +27,6 @@ int countPrimes(int n){
 	int count = 0;
 	for(int i = 2;i < n;i++){
 		if(pnum[i] == 0){
-			// cout << i << endl;
 			count++;
 		}
 	}
