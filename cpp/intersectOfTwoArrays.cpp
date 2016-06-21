@@ -1,4 +1,4 @@
-// intersectOfTwoArraysII.cpp
+// intersectOfTwoArrays.cpp
 
 #include <iostream>
 #include <map>
@@ -7,7 +7,7 @@
 
 using namespace std;
 
-vector<int> intersect(vector<int>& nums1, vector<int>& nums2){
+vector<int> intersection(vector<int>& nums1, vector<int>& nums2){
 	vector<int> result;
 
 	map<int,int> nums;
@@ -23,7 +23,7 @@ vector<int> intersect(vector<int>& nums1, vector<int>& nums2){
 	for(int j = 0;j < nums2.size();j++){
 		if(nums[nums2[j]] != 0){
 			result.push_back(nums2[j]);
-			nums[nums2[j]] -= 1;
+			nums[nums2[j]] = 0;
 		}
 	}
 
@@ -38,7 +38,7 @@ int main(){
 	nums2.assign(num2, num2 + 2);
 
 	vector<int> result;
-	result = intersect(nums1, nums2);
+	result = intersection(nums1, nums2);
 	for(int i = 0;i < result.size();i++)
 		cout << result[i] << ' ';
 	cout << endl;
